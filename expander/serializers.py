@@ -15,7 +15,7 @@ class ExpanderSerializerMixin(object):
         if not expandable_fields:
             return
 
-        if not expanded_fields:
+        if expanded_fields is None:
             context = self.context
             if not context:
                 return
@@ -55,6 +55,6 @@ class ExpanderSerializerMixin(object):
                         *args, expanded_fields=qs_from_dict(nested_expand),
                         **kwargs)
                 else:
-                    serializer = serializer_class(*args, **kwargs)
+                    serializer = serializer_class(*args, expanded_fields='', **kwargs)
 
                 self.fields[expanded_field] = serializer
