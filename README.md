@@ -15,7 +15,7 @@ A serializer mixin for Django REST Framework to expand object representations in
 Install using `pip`
 
 ```
-pip install djangorestframework-expander
+pip install https://github.com/feliperian/djangorestframework-expander.git
 ```
 
 # Quick Start
